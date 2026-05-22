@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Roteiro do Sistema Nervoso</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+  <header class="hero">
+    <div class="brand">
+      <div class="logo">UFJF</div>
+      <div>
+        <p class="eyebrow">Universidade Federal de Juiz de Fora</p>
+        <h1>Roteiro do Sistema Nervoso</h1>
+        <p class="subtitle">Departamento de Anatomia do Instituto de Ciências Biológicas</p>
+        <p class="teacher">Disciplina: Anatomia Humana · Prof.ª Dr.ª Simone Moreira de Macêdo</p>
+      </div>
+    </div>
+    <div class="actions-top">
+      <button id="themeBtn" class="glass-btn" type="button">🌙 Dia/Noite</button>
+      <button id="installBtn" class="primary-btn" type="button">⬇️ Baixar app</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel intro">
+      <h2>Registro prático por estrutura anatômica</h2>
+      <p>Use cada bloco para fotografar peças, incluir imagens ou arquivos e gerar um PDF final com todo o roteiro do Sistema Nervoso organizado por região.</p>
+      <div class="quick-actions">
+        <button id="generatePdfBtnTop" class="primary-btn" type="button">📄 Gerar PDF com todas as imagens</button>
+        <button id="clearAllBtn" class="danger-btn" type="button">🗑️ Limpar tudo</button>
+      </div>
+    </section>
+    <section id="stats" class="stats"></section>
+    <section id="app" class="cards"></section>
+    <section class="panel footer-panel">
+      <h2>Síntese prática</h2>
+      <p>Roteiro digital para encéfalo, tronco encefálico, cerebelo, cérebro, nervos espinhais, nervos cranianos, sistema ventricular e meninges.</p>
+      <button id="generatePdfBtnBottom" class="primary-btn wide" type="button">📄 Gerar PDF final</button>
+    </section>
+  </main>
+
+  <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
+  <input id="fileInput" type="file" accept="image/*,.pdf" multiple hidden />
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-head"><div><p class="section-label"></p><h3></h3></div><span class="count">0 imagens</span></div>
+      <ul class="items"></ul>
+      <textarea class="notes" placeholder="Anotações rápidas sobre esta estrutura..."></textarea>
+      <div class="card-actions">
+        <button class="photo-btn" type="button">📷 Tirar foto</button>
+        <button class="attach-btn" type="button">📎 Incluir arquivos</button>
+      </div>
+      <div class="gallery"></div>
+    </article>
+  </template>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
